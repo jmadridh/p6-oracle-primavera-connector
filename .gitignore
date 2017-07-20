@@ -32,13 +32,14 @@ tmp/**/*
 *~.nib
 .settings/
 .loadpath
+*.descriptor
 # -------------------------------------------------------------------------------------#
 # Recommended for Maven project 
 # -------------------------------------------------------------------------------------#
 .project 
 .classpath
 .buildpath
-
+.factorypath
 
 # ----------------# 
 # Studio specific #
@@ -49,7 +50,8 @@ target/**
 target/**/*
 target/classes/**
 target/classes/**/*
-
+target/generated-sources/**
+target/generated-sources/**/*
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
