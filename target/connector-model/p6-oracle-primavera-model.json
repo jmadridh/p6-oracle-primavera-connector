@@ -1,0 +1,53 @@
+{
+  "minMuleVersion": "3.7.0",
+  "requiresEntitlement": false,
+  "requiresEnterpriseLicense": false,
+  "configs": [
+    {
+      "keySeparator": "||",
+      "hasMultipleServiceDefinition": true,
+      "configElementName": "config",
+      "attributes": [
+        {
+          "javaTypeName": "String",
+          "fullQualifiedJavaTypeName": "java.lang.String",
+          "isOptional": false,
+          "isRefOnly": false,
+          "isPayload": false,
+          "isComplexType": false,
+          "isEnum": false,
+          "isString": true,
+          "typeMirror": "java.lang.String",
+          "isHttpCallback": false,
+          "isArrayOrListOrMap": false,
+          "javaName": "username"
+        },
+        {
+          "javaTypeName": "String",
+          "fullQualifiedJavaTypeName": "java.lang.String",
+          "isOptional": true,
+          "isRefOnly": false,
+          "isPayload": false,
+          "isComplexType": false,
+          "isEnum": false,
+          "isString": true,
+          "typeMirror": "java.lang.String",
+          "isHttpCallback": false,
+          "isArrayOrListOrMap": false,
+          "javaName": "password"
+        }
+      ],
+      "javaName": "ConnectorConfig",
+      "friendlyName": "Configuration",
+      "type": "WsdlProviderConfig"
+    }
+  ],
+  "attributes": [],
+  "processors": [],
+  "filters": [],
+  "transformers": [],
+  "sources": [],
+  "javaName": "P6OraclePrimaveraConnector",
+  "friendlyName": "P6OraclePrimavera",
+  "xsdName": "p6-oracle-primavera"
+}

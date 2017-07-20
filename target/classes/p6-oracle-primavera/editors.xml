@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<namespace xmlns="http://www.mulesoft.org/schema/mule/tooling.attributes" xmlns:mule="http://www.mulesoft.org/schema/mule/core" url="http://www.mulesoft.org/schema/mule/p6-oracle-primavera" prefix="p6-oracle-primavera">
+  <global-cloud-connector versions="[3.7.0,8.0.0]" caption="P6OraclePrimavera" description="" icon="" localId="parentConfig" image="" abstract="true" extends="http://www.mulesoft.org/schema/mule/p6-oracle-primavera/abstractP6-oracle-primaveraConnectorGeneric"></global-cloud-connector>
+  <global-cloud-connector versions="[3.7.0,8.0.0]" caption="P6OraclePrimavera: Configuration" description="Global Configuration configuration information." icon="icons/theme.classic/p6-oracle-primavera-connector-small.png" localId="config" image="icons/theme.classic/p6-oracle-primavera-connector-large.png" abstract="false" extends="http://www.mulesoft.org/schema/mule/p6-oracle-primavera/parentConfig" connectivityTesting="off" metaData="dynamic" metaDataKeyDisplay="DISPLAY_NAME" supportsUserDefinedMetaData="false">
+    <attribute-category caption="General" description="P6-oracle-primavera configuration properties.">
+      <group id="p6-oracle-primaveraGenericProperties" caption="Basic Settings">
+        <name name="name" caption="Name" description="Give a name to this configuration so it can be later referenced by config-ref." required="true"></name>
+      </group>
+      <group id="general" caption="General">
+        <useMetaData name="useMetaData" caption="useMetaData"></useMetaData>
+        <string name="username" caption="Username" description="" supportsExpressions="false" required="true" javaType="java.lang.String" requiredForDataSense="true"></string>
+        <password name="password" caption="Password" description="" supportsExpressions="false" required="false" javaType="java.lang.String"></password>
+      </group>
+    </attribute-category>
+  </global-cloud-connector>
+  <cloud-connector caption="Abstractp6-oracle-primaveraconnectorgeneric" description="Interact with P6-oracle-primavera." icon="icons/theme.classic/p6-oracle-primavera-connector-small.png" localId="abstractP6-oracle-primaveraConnectorGeneric" image="icons/theme.classic/p6-oracle-primavera-connector-large.png" abstract="true">
+    <attribute-category caption="General" description="General.">
+      <group id="abstractP6-oracle-primaveraConnectorGeneric" caption="Basic Settings">
+        <globalRef requiredType="http://www.mulesoft.org/schema/mule/p6-oracle-primavera/config" name="config-ref" caption="Connector Configuration" description="Specify which configuration to use for this invocation." required="true"></globalRef>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector versions="[3.7.0,8.0.0]" aliasId="org.mule.tooling.ui.modules.core.pattern.p6-oracle-primavera" caption="P6OraclePrimavera" description="" icon="icons/theme.classic/p6-oracle-primavera-connector-small.png" localId="p6-oracle-primavera-connector" image="icons/theme.classic/p6-oracle-primavera-connector-large.png" extends="http://www.mulesoft.org/schema/mule/p6-oracle-primavera/abstractP6-oracle-primaveraConnectorGeneric">
+    <attribute-category caption="General" description="General.">
+      <group id="p6-oracle-primaveraConnectorGeneric" caption="Basic Settings">
+        <modeSwitch alwaysCombo="true" name="P6-oracle-primavera operations to execute" caption="Operation" description="Operation.">
+          <mode modeId="http://www.mulesoft.org/schema/mule/p6-oracle-primavera/invoke" modeLabel="Invoke"></mode>
+        </modeSwitch>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector caption="Invoke" icon="icons/theme.classic/p6-oracle-primavera-connector-small.png" localId="invoke" image="icons/theme.classic/p6-oracle-primavera-connector-large.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/p6-oracle-primavera/abstractP6-oracle-primaveraConnectorGeneric" metaData="dynamic">
+    <attribute-category caption="General" description="General.">
+      <group id="general" caption="General">
+        <multi-type-chooser captions="Service,Operation" keySeparator="||" associatedConfig="config-ref" affects="BOTH" name="type" caption="Type" description="The representation of the WSDL file plus an operation." supportsExpressions="true" required="true" javaType="java.lang.String"></multi-type-chooser>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+</namespace>
