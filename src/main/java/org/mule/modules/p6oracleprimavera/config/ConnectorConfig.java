@@ -3,22 +3,30 @@ package org.mule.modules.p6oracleprimavera.config;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.mule.api.annotations.ws.WsdlSecurity;
-import org.mule.devkit.api.ws.authentication.WsdlSecurityStrategy;
-import org.mule.devkit.api.ws.authentication.WsdlUsernameToken;
-import org.mule.module.ws.security.PasswordType;
 import org.mule.api.annotations.Configurable;
+import org.mule.api.annotations.components.WsdlProvider;
 import org.mule.api.annotations.display.Password;
 import org.mule.api.annotations.display.Placement;
-import org.mule.api.annotations.components.WsdlProvider;
+import org.mule.api.annotations.param.Optional;
+import org.mule.api.annotations.ws.WsdlSecurity;
 import org.mule.api.annotations.ws.WsdlServiceEndpoint;
 import org.mule.api.annotations.ws.WsdlServiceRetriever;
+import org.mule.api.annotations.ws.WsdlTransportRetriever;
+import org.mule.devkit.api.ws.authentication.WsdlSecurityStrategy;
+import org.mule.devkit.api.ws.authentication.WsdlUsernameToken;
 import org.mule.devkit.api.ws.definition.DefaultServiceDefinition;
 import org.mule.devkit.api.ws.definition.ServiceDefinition;
-import org.mule.api.annotations.param.Optional;
+import org.mule.devkit.api.ws.transport.HttpRequesterConfigWsdlTransport;
+import org.mule.devkit.api.ws.transport.WsdlTransport;
+import org.mule.module.http.api.requester.HttpRequesterConfig;
+import org.mule.module.ws.security.PasswordType;
 
 @WsdlProvider(friendlyName = "Configuration")
 public class ConnectorConfig {
+	
+	@Configurable
+	@Placement (order = 0)
+	private HttpRequesterConfig requesterConfig;
 
     @Configurable
     @Placement(order = 1)
@@ -1413,7 +1421,26 @@ public class ConnectorConfig {
         return result;
     }
 
-    @WsdlSecurity
+    @WsdlTransportRetriever
+    public WsdlTransport resolveTransport(ServiceDefinition definition){
+    	return new HttpRequesterConfigWsdlTransport(getRequesterConfig());
+    }
+    
+    /**
+	 * @return the requesterConfig
+	 */
+	public HttpRequesterConfig getRequesterConfig() {
+		return requesterConfig;
+	}
+
+	/**
+	 * @param requesterConfig the requesterConfig to set
+	 */
+	public void setRequesterConfig(HttpRequesterConfig requesterConfig) {
+		this.requesterConfig = requesterConfig;
+	}
+
+	@WsdlSecurity
     public List<WsdlSecurityStrategy> getWsdlSecurityResolver(ServiceDefinition definition) {
         List<WsdlSecurityStrategy> result = new ArrayList<WsdlSecurityStrategy>();
         result.add(new WsdlUsernameToken(getUsername(),  getPassword(), PasswordType.TEXT, true, true));

@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: P6OraclePrimavera
 Bundle-SymbolicName: org.mule.tooling.ui.contribution.p6-oracle-primavera.3.7.0;singleton:=true
-Bundle-Version: 1.0.0.201707201840
+Bundle-Version: 1.0.0.201707201906
 Bundle-Activator: org.mule.tooling.ui.contribution.P6OraclePrimaveraActivator
 Bundle-Vendor: 
 Require-Bundle: org.eclipse.ui,

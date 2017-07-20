@@ -16,6 +16,11 @@
               <xs:documentation>Give a name to this configuration so it can be later referenced by config-ref.</xs:documentation>
             </xs:annotation>
           </xs:attribute>
+          <xs:attribute type="xs:string" use="required" name="requesterConfig-ref">
+            <xs:annotation>
+              <xs:documentation></xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
           <xs:attribute type="xs:string" use="required" name="username">
             <xs:annotation>
               <xs:documentation></xs:documentation>

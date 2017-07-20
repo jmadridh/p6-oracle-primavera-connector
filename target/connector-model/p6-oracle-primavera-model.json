@@ -9,6 +9,20 @@
       "configElementName": "config",
       "attributes": [
         {
+          "javaTypeName": "HttpRequesterConfig",
+          "fullQualifiedJavaTypeName": "org.mule.module.http.api.requester.HttpRequesterConfig",
+          "isOptional": false,
+          "isRefOnly": false,
+          "isPayload": false,
+          "isComplexType": false,
+          "isEnum": false,
+          "isString": false,
+          "typeMirror": "org.mule.module.http.api.requester.HttpRequesterConfig",
+          "isHttpCallback": false,
+          "isArrayOrListOrMap": false,
+          "javaName": "requesterConfig"
+        },
+        {
           "javaTypeName": "String",
           "fullQualifiedJavaTypeName": "java.lang.String",
           "isOptional": false,

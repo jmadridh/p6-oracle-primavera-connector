@@ -9,6 +9,7 @@ import org.mule.modules.p6oracleprimavera.generated.adapters.P6OraclePrimaveraCo
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.beans.factory.config.RuntimeBeanReference;
 import org.springframework.beans.factory.parsing.BeanDefinitionParsingException;
 import org.springframework.beans.factory.parsing.Location;
 import org.springframework.beans.factory.parsing.Problem;
@@ -17,7 +18,7 @@ import org.springframework.beans.factory.xml.ParserContext;
 import org.w3c.dom.Element;
 
 @SuppressWarnings("all")
-@Generated(value = "Mule DevKit Version 3.9.0", date = "2017-07-20T06:40:26+01:00", comments = "Build UNNAMED.2793.f49b6c7")
+@Generated(value = "Mule DevKit Version 3.9.0", date = "2017-07-20T07:06:23+01:00", comments = "Build UNNAMED.2793.f49b6c7")
 public class P6OraclePrimaveraConnectorConnectorConfigConfigDefinitionParser
     extends AbstractEEDefinitionParser
 {
@@ -35,6 +36,9 @@ public class P6OraclePrimaveraConnectorConnectorConfigConfigDefinitionParser
         setInitMethodIfNeeded(builder, P6OraclePrimaveraConnectorConnectorConfigWsdlProviderAdapter.class);
         setDestroyMethodIfNeeded(builder, P6OraclePrimaveraConnectorConnectorConfigWsdlProviderAdapter.class);
         BeanDefinitionBuilder wsdlProviderStrategyBuilder = BeanDefinitionBuilder.rootBeanDefinition(ConnectorConfig.class.getName());
+        if (hasAttribute(element, "requesterConfig-ref")) {
+            wsdlProviderStrategyBuilder.addPropertyValue("requesterConfig", new RuntimeBeanReference(element.getAttribute("requesterConfig-ref")));
+        }
         parseProperty(wsdlProviderStrategyBuilder, element, "username", "username");
         parseProperty(wsdlProviderStrategyBuilder, element, "password", "password");
         builder.addPropertyValue("config", wsdlProviderStrategyBuilder.getBeanDefinition());

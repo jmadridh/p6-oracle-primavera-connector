@@ -23,7 +23,7 @@ import org.slf4j.LoggerFactory;
  * 
  */
 @SuppressWarnings("all")
-@Generated(value = "Mule DevKit Version 3.9.0", date = "2017-07-20T06:40:26+01:00", comments = "Build UNNAMED.2793.f49b6c7")
+@Generated(value = "Mule DevKit Version 3.9.0", date = "2017-07-20T07:06:23+01:00", comments = "Build UNNAMED.2793.f49b6c7")
 public class P6OraclePrimaveraConnectorLifecycleInjectionAdapter
     extends P6OraclePrimaveraConnectorMetadataAdapter
     implements MuleContextAware, Disposable, Initialisable, Startable, Stoppable

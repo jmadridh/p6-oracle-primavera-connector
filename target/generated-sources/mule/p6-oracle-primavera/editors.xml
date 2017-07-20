@@ -9,6 +9,7 @@
       </group>
       <group id="general" caption="General">
         <useMetaData name="useMetaData" caption="useMetaData"></useMetaData>
+        <globalRef requiredType="http://www.mulesoft.org/schema/mule/http/request-config" name="requesterConfig-ref" caption="Requester Config" description="" required="true"></globalRef>
         <string name="username" caption="Username" description="" supportsExpressions="false" required="true" javaType="java.lang.String" requiredForDataSense="true"></string>
         <password name="password" caption="Password" description="" supportsExpressions="false" required="false" javaType="java.lang.String"></password>
       </group>

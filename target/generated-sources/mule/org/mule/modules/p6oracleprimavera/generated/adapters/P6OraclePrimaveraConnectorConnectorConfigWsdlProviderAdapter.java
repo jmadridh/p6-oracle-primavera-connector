@@ -31,7 +31,7 @@ import org.w3c.dom.Document;
  * 
  */
 @SuppressWarnings("all")
-@Generated(value = "Mule DevKit Version 3.9.0", date = "2017-07-20T06:40:26+01:00", comments = "Build UNNAMED.2793.f49b6c7")
+@Generated(value = "Mule DevKit Version 3.9.0", date = "2017-07-20T07:06:23+01:00", comments = "Build UNNAMED.2793.f49b6c7")
 public class P6OraclePrimaveraConnectorConnectorConfigWsdlProviderAdapter implements ProcessAdapter<WsdlAdapter> , Disposable, ConnectorMetaDataEnabled, WsdlAdapter
 {
 
@@ -121,7 +121,7 @@ public class P6OraclePrimaveraConnectorConnectorConfigWsdlProviderAdapter implem
 
     @Override
     public WsdlTransport transport(ServiceDefinition serviceDefinition) {
-        return null;
+        return getConfig().resolveTransport(serviceDefinition);
     }
 
     @Override
